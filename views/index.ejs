@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <h1>Todo</h1>
+</head>
+<body>
+    
+    <div class="box">
+        <% tlist.forEach(function (item) {   %>
+          <form action="/delete" method="post">
+    
+            <div class="item">
+              <input  type="checkbox" value="<%=item._id %>" name ="checkbox" onChange="this.form.submit()"> <%// on change allows for checkbox to submit a form just like a button :submit%>
+              <p><%=  item.name  %></p>
+            </div>
+          </form>
+          <% }) %>
+    
+          <form class="item" action="/" method="post">
+            <input type="text" name="todo" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="list">+</button>
+          </form>
+      </div>
+</html>
