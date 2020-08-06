@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
-    <h1>Todo</h1>
+    <h1 id="title">Todo</h1>
 </head>
 <body>
     
@@ -13,9 +13,11 @@
         <% tlist.forEach(function (item) {   %>
           <form action="/delete" method="post">
     
-            <div class="item">
-              <input  type="checkbox" value="<%=item._id %>" name ="checkbox" onChange="this.form.submit()"> <%// on change allows for checkbox to submit a form just like a button :submit%>
+            <div class="tasks">
               <p><%=  item.name  %></p>
+              <label for="checkbox" style="font-size:14px;">Delete</label>
+              <input  type="checkbox" value="<%=item._id %>" name ="checkbox" onChange="this.form.submit()"> <%// on change allows for checkbox to submit a form just like a button :submit%>
+              <hr>
             </div>
           </form>
           <% }) %>
